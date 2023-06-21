@@ -381,6 +381,9 @@ class TetrisController : ObservableObject {
         board[12][7].piece = .S
         board[11][8].piece = .S
         board[12][8].piece = .I
+        
+        fallingPiece = nil
+        fallingTopLeft = nil
     }
     
     // MARK: Scoring

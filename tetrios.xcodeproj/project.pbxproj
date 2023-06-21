@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F31D66D62A3FB8A4005BD1AA /* tetriosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31D66D52A3FB8A4005BD1AA /* tetriosApp.swift */; };
-		F31D66D82A3FB8A4005BD1AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31D66D72A3FB8A4005BD1AA /* ContentView.swift */; };
+		F31D66D82A3FB8A4005BD1AA /* TetrisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31D66D72A3FB8A4005BD1AA /* TetrisView.swift */; };
 		F31D66DA2A3FB8A5005BD1AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F31D66D92A3FB8A5005BD1AA /* Assets.xcassets */; };
 		F31D66DD2A3FB8A5005BD1AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F31D66DC2A3FB8A5005BD1AA /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		F31D66D22A3FB8A4005BD1AA /* tetrios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tetrios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F31D66D52A3FB8A4005BD1AA /* tetriosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tetriosApp.swift; sourceTree = "<group>"; };
-		F31D66D72A3FB8A4005BD1AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F31D66D72A3FB8A4005BD1AA /* TetrisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisView.swift; sourceTree = "<group>"; };
 		F31D66D92A3FB8A5005BD1AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F31D66DC2A3FB8A5005BD1AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				F31D66D52A3FB8A4005BD1AA /* tetriosApp.swift */,
-				F31D66D72A3FB8A4005BD1AA /* ContentView.swift */,
+				F31D66D72A3FB8A4005BD1AA /* TetrisView.swift */,
 				F31D66D92A3FB8A5005BD1AA /* Assets.xcassets */,
 				F31D66DB2A3FB8A5005BD1AA /* Preview Content */,
 			);
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F31D66D82A3FB8A4005BD1AA /* ContentView.swift in Sources */,
+				F31D66D82A3FB8A4005BD1AA /* TetrisView.swift in Sources */,
 				F31D66D62A3FB8A4005BD1AA /* tetriosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
