@@ -68,18 +68,19 @@ struct TetrisAbstractCell : Identifiable {
     var piece: Piece = Piece.Empty
     var locked: Bool = false
     var shadow: Bool = false
+    var shadowPiece: Piece = Piece.Empty
     
     init(controller: TetrisController, at row: Int, _ col: Int) {
         self.id = row * 10 + col + 10
         self.controller = controller
     }
     
-    func color() -> Color {
-        return (piece == .Empty && shadow) ? controller.fallingPiece!.colorForPiece().opacity(0.75) : piece.colorForPiece()
+    func color() -> (Color?, AnyGradient?) {
+        return (piece == .Empty && shadow) ? (shadowPiece.colorForPiece(), nil) : (nil, piece.colorForPiece().gradient)
     }
     
     func border() -> Color {
-        return shadow ? piece.colorForPiece() : .gray
+        return shadow ? shadowPiece.colorForPiece() : .gray
     }
 }
 
@@ -853,6 +854,7 @@ class TetrisController : ObservableObject {
             for c in 0..<10 {
                 if board[r][c].shadow {
                     board[r][c].shadow = false
+                    board[r][c].shadowPiece = .Empty
                 }
             }
         }
@@ -868,6 +870,7 @@ class TetrisController : ObservableObject {
                         let rPr = fallingTopLeft!.0 + r + dr
                         let cPr = fallingTopLeft!.1 + c
                         board[rPr][cPr].shadow = true
+                        board[rPr][cPr].shadowPiece = fallingPiece!
                     }
                 }
             }
@@ -880,10 +883,26 @@ struct TetrisCell: View {
     var size: CGFloat
     var cell: TetrisAbstractCell
     var body: some View {
-        Rectangle()
-            .fill(cell.color())
-            .border(cell.border())
-            .frame(width: size, height: size)
+        let (color, gradient) = cell.color()
+        if color != nil {
+            ZStack {
+                Rectangle()
+                    .fill(Piece.Empty.colorForPiece())
+                    .opacity(1.0)
+                    .border(cell.border())
+                    .frame(width: size, height: size)
+                Rectangle()
+                    .fill(color!)
+                    .opacity(cell.shadow ? 0.5 : 1.0)
+                    .border(cell.border())
+                    .frame(width: size, height: size)
+            }
+        } else {
+            Rectangle()
+                .fill(gradient!)
+                .border(cell.border())
+                .frame(width: size, height: size)
+        }
     }
 }
 
